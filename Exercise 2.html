@@ -1,0 +1,118 @@
+<html>
+  <head>
+    <title>Kalkulator</title>
+    <script>
+      function tambah() {
+        document.getElementById("operator").innerHTML = "+";
+
+        var n1 = document.getElementById("value1").value;
+        var n2 = document.getElementById("value2").value;
+        hasil = parseInt(n1) + parseInt(n2);
+      }
+
+      function kurang() {
+        document.getElementById("operator").innerHTML = "-";
+
+        var n1 = document.getElementById("value1").value;
+        var n2 = document.getElementById("value2").value;
+        hasil = parseInt(n1) - parseInt(n2);
+      }
+
+      function kali() {
+        document.getElementById("operator").innerHTML = "x";
+
+        var n1 = document.getElementById("value1").value;
+        var n2 = document.getElementById("value2").value;
+        hasil = parseInt(n1) * parseInt(n2);
+      }
+
+      function bagi() {
+        document.getElementById("operator").innerHTML = "/";
+
+        var n1 = document.getElementById("value1").value;
+        var n2 = document.getElementById("value2").value;
+        hasil = parseInt(n1) / parseInt(n2);
+      }
+
+      function total() {
+        document.getElementById("result").innerHTML = "" + hasil;
+        if (hasil == null) {
+          alert("isi kolom dengan nilai");
+        }
+      }
+    </script>
+    <style>
+      body {
+        background: rgb(31, 230, 130);
+      }
+      div.border {
+        border: 1px solid #dddddd;
+        display: inline-block;
+        padding: 2em;
+        background: white;
+      }
+      div.border1 {
+        border: 1px solid #dddddd;
+        display: inline-block;
+        padding-left: 1em;
+        padding-right: 1em;
+        padding-bottom: 1em;
+        background: white;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid #dddddd;
+        color: #333;
+        font-size: 14px;
+        margin-bottom: 15px;
+        padding: 0.5em 1em 0.5em 0;
+        width: 200px;
+      }
+      button {
+        width: 50px;
+        height: 50px;
+      }
+
+      button#btotal {
+        margin-top: 10px;
+        width: 200px;
+        height: 50px;
+      }
+
+      p#result {
+        margin-top: 10px;
+        size: 50px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div class="border1">
+        <h5 align="left">Kalkulator</h5>
+        <div class="border">
+          <h3 align="left">Nilai pertama</h3>
+          <input type="text" id="value1" /><br />
+          <div id="operator"></div>
+          <h3 align="left">Nilai kedua</h3>
+          <input type="text" id="value2" /><br />
+
+          <button onclick="tambah()">
+            +
+          </button>
+          <button onclick="kurang()">
+            -
+          </button>
+          <button onclick="kali()">
+            x
+          </button>
+          <button onclick="bagi()">
+            /</button
+          ><br />
+          <button onclick="total()" id="btotal">hasil</button><br />
+          <b><p id="result"></p></b>
+        </div>
+      </div>
+    </center>
+  </body>
+</html>
